@@ -1,6 +1,7 @@
 use std::fs;
 use std::io::{self, BufRead, Write};
 
+use crate::parser::Parser;
 use crate::scanner::Scanner;
 
 #[derive(Debug)]
@@ -51,6 +52,14 @@ impl Lox {
     fn run(&mut self, source: String) {
         let mut s = Scanner::from(source, self);
         s.scan_tokens();
-        println!("{:?}", s.tokens);
+
+        let mut parser = Parser {
+            tokens: s.tokens,
+            current: 0,
+        };
+
+        let expr = parser.parse();
+
+        println!("{:?}", expr);
     }
 }
