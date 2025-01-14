@@ -15,6 +15,9 @@ export default tseslint.config(
         tsconfigRootDir: import.meta.dirname,
       },
     },
-    ignores: ["**/*.config.js"]
+    ignores: ["**/*.config.js"],
+    rules: {
+      "@typescript-eslint/switch-exhaustiveness-check": "error"
+    }
   },
 );
