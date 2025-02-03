@@ -3,12 +3,14 @@
     "target": "ESNext",
     "module": "NodeNext",
     "strict": true,
-    "forceConsistentCasingInFileNames": true,
     "skipLibCheck": true,
     "allowJs": true,
     "outDir": "dist",
+    "forceConsistentCasingInFileNames": true,
     "allowImportingTsExtensions": true,
     "rewriteRelativeImportExtensions": true,
+    "verbatimModuleSyntax": true,
+    // "erasableSyntaxOnly": true // TS 5.8+
   },
   "include": [
     "src/**/*"
